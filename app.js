@@ -67,28 +67,33 @@ const listenMenssage = () =>{
     client.on('message', (msg) => {
         const {from, to, body} = msg;
 
-        switch (body) {
-            case 'Te_extraño'.toLowerCase():
+        switch (body.toLowerCase()) {
+            case 'Te_extraño':
                 sendMessage(from, 'Yo tambien te extraño y mucho 🥰');
                 break;
 
-            case 'Te_amo'.toLowerCase():
+            case 'Te_amo':
                 sendMessage(from, 'Yo te amo mucho mas amorcito 😘')
                 break;
 
-            case 'Hola_mi_amor'.toLowerCase():
+            case 'Hola_mi_amor':
                 sendMessage(from, 'Hola mi amor, mi vida como estas? 🥰')
                 break;
 
-            case 'Buen_dia_amor'.toLowerCase():
+            case 'Buen_dia_amor':
                 sendMessage(from, 'Buen dia mi amor, mi vida, mi cielo, mi corazon, mi todo 🥰🥰🥰')
                 break;
             
-            case 'Como_estas?'.toLowerCase():
+            case 'Como_estas?':
                 sendMessage(from, 'Bien, en mi habitat natural como siempre.')
                 break;
+
+            case 'motivation':
+                sendMessage(from, 'Siempre la mayor debilidad de todas las es rendirse, la única manera de tener éxito es intentarlo siempre una vez más')
+
+                break;
             
-            case 'send_michi'.toLowerCase():
+            case 'send_michi':
                 sendMedia(from)
                 sendMessage(from, 'Aqui tienes tu gatito!');
                 break;      
@@ -98,7 +103,7 @@ const listenMenssage = () =>{
 }
 
 const sendMedia = (to) =>{
-    let num = Math.floor((Math.random() * (5 - 1 + 1)) + 1);
+    let num = Math.floor((Math.random() * (13 - 1 + 1)) + 1);
     const mediaFile = MessageMedia.fromFilePath(`./mediaSendMichi/gatito${num}.jpg`)
     client.sendMessage(to, mediaFile);
 }
