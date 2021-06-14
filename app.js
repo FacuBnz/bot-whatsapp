@@ -113,9 +113,8 @@ const sendMedia = (to) =>{
 }
 
 const stickerSendMichi = (to) =>{
-
     const mediaFile = MessageMedia.fromFilePath(`./stickerSendMichi/besito.webp`)
-    client.sendMessage(to, mediaFile);
+    client.sendMessage(to, mediaFile, { sendMediaAsSticker: true});
 }
 
 const sendMessage = (to, message) => {
