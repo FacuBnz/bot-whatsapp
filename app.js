@@ -67,7 +67,7 @@ const listenMenssage = () =>{
     client.on('message', (msg) => {
         const {from, to, body} = msg;
 
-        switch (body.toLowerCase()) {
+        switch (body) {
             case 'Te_extraño':
                 sendMessage(from, 'Yo tambien te extraño y mucho 🥰');
                 break;
@@ -88,12 +88,16 @@ const listenMenssage = () =>{
                 sendMessage(from, 'Bien, en mi habitat natural como siempre.')
                 break;
 
-            case 'motivation':
+            case 'Motivation':
                 sendMessage(from, 'Siempre la mayor debilidad de todas las es rendirse, la única manera de tener éxito es intentarlo siempre una vez más')
 
                 break;
+
+            case 'Kiss_michi':
+                stickerSendMichi(from);
+                break;
             
-            case 'send_michi':
+            case 'Get_michi':
                 sendMedia(from)
                 sendMessage(from, 'Aqui tienes tu gatito!');
                 break;      
@@ -105,6 +109,12 @@ const listenMenssage = () =>{
 const sendMedia = (to) =>{
     let num = Math.floor((Math.random() * (13 - 1 + 1)) + 1);
     const mediaFile = MessageMedia.fromFilePath(`./mediaSendMichi/gatito${num}.jpg`)
+    client.sendMessage(to, mediaFile);
+}
+
+const stickerSendMichi = (to) =>{
+
+    const mediaFile = MessageMedia.fromFilePath(`./stickerSendMichi/besito.webp`)
     client.sendMessage(to, mediaFile);
 }
 
