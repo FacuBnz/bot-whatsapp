@@ -89,7 +89,7 @@ const listenMenssage = () =>{
                 break;
 
             case 'Motivation':
-                sendMessage(from, 'Siempre la mayor debilidad de todas las es rendirse, la única manera de tener éxito es intentarlo siempre una vez más')
+                sendMessage(from, 'Siempre la mayor debilidad de todas las personas es rendirse, la única manera de tener éxito y  marcar la diferencia es intentarlo siempre una vez más')
 
                 break;
 
