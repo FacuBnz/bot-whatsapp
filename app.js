@@ -68,22 +68,6 @@ const listenMenssage = () =>{
         const {from, to, body} = msg;
 
         switch (body) {
-            case 'Te_extraño':
-                sendMessage(from, 'Yo tambien te extraño y mucho 🥰');
-                break;
-
-            case 'Te_amo':
-                sendMessage(from, 'Yo te amo mucho mas amorcito 😘')
-                break;
-
-            case 'Hola_mi_amor':
-                sendMessage(from, 'Hola mi amor, mi vida como estas? 🥰')
-                break;
-
-            case 'Buen_dia_amor':
-                sendMessage(from, 'Buen dia mi amor, mi vida, mi cielo, mi corazon, mi todo 🥰🥰🥰')
-                break;
-            
             case 'Como_estas?':
                 sendMessage(from, 'Bien, en mi habitat natural como siempre.')
                 break;
